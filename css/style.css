@@ -1,0 +1,660 @@
+/*====================================
+    SGenova Technologies
+    Main Stylesheet
+=====================================*/
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* Reset */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    line-height:1.6;
+    color:#333;
+    background:#fff;
+}
+
+/* Variables */
+
+:root{
+
+    --primary:#0056d6;
+    --secondary:#0d1b2a;
+    --light:#f5f7fa;
+    --white:#ffffff;
+    --dark:#222;
+    --shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+/* Container */
+
+.container{
+
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+
+}
+
+/* Images */
+
+img{
+
+    width:100%;
+    display:block;
+
+}
+
+/* Links */
+
+a{
+
+    text-decoration:none;
+
+}
+
+/* Lists */
+
+ul{
+
+    list-style:none;
+
+}
+
+/* Buttons */
+
+.btn{
+
+    display:inline-block;
+    padding:14px 35px;
+    background:var(--primary);
+    color:#fff;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    background:#003f9e;
+    transform:translateY(-3px);
+
+}
+
+.btn-outline{
+
+    display:inline-block;
+    padding:14px 35px;
+    border:2px solid var(--primary);
+    color:var(--primary);
+    border-radius:50px;
+    transition:.3s;
+
+}
+
+.btn-outline:hover{
+
+    background:var(--primary);
+    color:#fff;
+
+}
+
+/* Header */
+
+header{
+
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    background:#fff;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+    z-index:1000;
+
+}
+
+nav{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height:80px;
+
+}
+
+.logo img{
+
+    width:170px;
+
+}
+
+nav ul{
+
+    display:flex;
+    gap:35px;
+
+}
+
+nav ul li a{
+
+    color:#333;
+    font-weight:500;
+    transition:.3s;
+
+}
+
+nav ul li a:hover,
+nav ul li a.active{
+
+    color:var(--primary);
+
+}
+
+/* Hero */
+
+.hero{
+
+    padding:150px 0 100px;
+    background:linear-gradient(to right,#eef5ff,#ffffff);
+
+}
+
+.hero-content{
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:60px;
+    align-items:center;
+
+}
+
+.hero-text h1{
+
+    font-size:52px;
+    color:var(--secondary);
+    margin-bottom:20px;
+
+}
+
+.hero-text p{
+
+    font-size:18px;
+    margin-bottom:30px;
+    color:#555;
+
+}
+
+.hero-image img{
+
+    border-radius:20px;
+    box-shadow:var(--shadow);
+
+}
+
+/* Common Sections */
+
+section{
+
+    padding:90px 0;
+
+}
+
+section h2{
+
+    text-align:center;
+    font-size:38px;
+    color:var(--secondary);
+    margin-bottom:50px;
+
+}
+
+/* Grid */
+
+.grid-2{
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:60px;
+    align-items:center;
+
+}
+
+/* Cards */
+
+.cards{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+
+}
+
+.card{
+
+    background:#fff;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:var(--shadow);
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.card img{
+
+    width:80px;
+    margin-bottom:20px;
+
+}
+
+.card h3{
+
+    margin-bottom:15px;
+    color:var(--secondary);
+
+}
+
+.card p{
+
+    color:#666;
+
+}
+
+
+
+/*====================================
+    ABOUT SECTION
+=====================================*/
+
+.about-preview img,
+.about-company img{
+    border-radius:15px;
+    box-shadow:var(--shadow);
+}
+
+.about-preview p,
+.about-company p{
+    margin:15px 0;
+    color:#666;
+    font-size:16px;
+}
+
+/*====================================
+    PAGE BANNER
+=====================================*/
+
+.page-banner{
+    background:linear-gradient(135deg,#0056d6,#0d1b2a);
+    color:#fff;
+    text-align:center;
+    padding:140px 0 80px;
+}
+
+.page-banner h1{
+    font-size:48px;
+    margin-bottom:15px;
+}
+
+.page-banner p{
+    font-size:18px;
+    opacity:.9;
+}
+
+/*====================================
+    SERVICES
+=====================================*/
+
+.services{
+    background:#f8f9fc;
+}
+
+.services .card{
+    text-align:center;
+}
+
+.services .card img{
+    width:70px;
+    margin:0 auto 20px;
+}
+
+.services .card h3{
+    margin-bottom:15px;
+}
+
+.services .card:hover{
+    background:#fff;
+}
+
+/*====================================
+    PROCESS
+=====================================*/
+
+.process{
+    background:#fff;
+}
+
+.process .card{
+    text-align:center;
+}
+
+.process .card h3{
+    font-size:42px;
+    color:var(--primary);
+}
+
+/*====================================
+    TECHNOLOGIES
+=====================================*/
+
+.technologies{
+    background:#f5f7fa;
+}
+
+.tech-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:20px;
+}
+
+.tech-grid div{
+    background:#fff;
+    padding:20px;
+    text-align:center;
+    border-radius:12px;
+    font-weight:600;
+    box-shadow:var(--shadow);
+    transition:.3s;
+}
+
+.tech-grid div:hover{
+    background:var(--primary);
+    color:#fff;
+    transform:translateY(-5px);
+}
+
+/*====================================
+    WHY CHOOSE US
+=====================================*/
+
+.why{
+    background:#0d1b2a;
+    color:#fff;
+}
+
+.why h2{
+    color:#fff;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+    text-align:center;
+}
+
+.features div{
+    padding:35px;
+    background:rgba(255,255,255,.08);
+    border-radius:15px;
+}
+
+.features h3{
+    font-size:42px;
+    color:#4ea3ff;
+}
+
+.features p{
+    margin-top:10px;
+}
+
+/*====================================
+    PORTFOLIO
+=====================================*/
+
+.portfolio{
+    background:#fff;
+}
+
+.portfolio .card{
+    overflow:hidden;
+}
+
+.portfolio .card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    border-radius:12px;
+    margin-bottom:20px;
+}
+
+.portfolio .card:hover img{
+    transform:scale(1.05);
+    transition:.4s;
+}
+
+.tag{
+    display:inline-block;
+    margin-top:15px;
+    padding:8px 18px;
+    background:var(--primary);
+    color:#fff;
+    border-radius:30px;
+    font-size:13px;
+}
+
+/*====================================
+    INDUSTRIES
+=====================================*/
+
+.industries{
+    background:#f8f9fc;
+}
+
+.industries .card{
+    text-align:center;
+}
+
+/*====================================
+    TEAM
+=====================================*/
+
+.team{
+    background:#fff;
+}
+
+.team .card{
+    text-align:center;
+}
+
+.team img{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    object-fit:cover;
+    margin:auto;
+    margin-bottom:20px;
+}
+
+/*====================================
+    TESTIMONIALS
+=====================================*/
+
+.testimonials{
+    background:#f5f7fa;
+}
+
+.testimonials .card{
+    text-align:center;
+}
+
+.testimonials p{
+    font-style:italic;
+    color:#555;
+}
+
+.testimonials h4{
+    margin-top:20px;
+    color:var(--primary);
+}
+
+/*====================================
+    CONTACT
+=====================================*/
+
+.contact{
+    background:#fff;
+}
+
+.contact-form{
+    background:#fff;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:var(--shadow);
+}
+
+.contact-form h2{
+    text-align:left;
+    margin-bottom:25px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:15px;
+    margin-bottom:20px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:15px;
+    font-family:Poppins,sans-serif;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    outline:none;
+    border-color:var(--primary);
+}
+
+.contact-info{
+    padding:20px;
+}
+
+.info-box{
+    background:#f5f7fa;
+    padding:25px;
+    margin-bottom:20px;
+    border-left:5px solid var(--primary);
+    border-radius:10px;
+}
+
+.info-box h3{
+    margin-bottom:10px;
+    color:var(--secondary);
+}
+
+.map iframe{
+    border-radius:15px;
+    box-shadow:var(--shadow);
+}
+
+/*====================================
+    CTA
+=====================================*/
+
+.cta{
+    text-align:center;
+    background:linear-gradient(135deg,#0056d6,#0d1b2a);
+    color:#fff;
+}
+
+.cta h2{
+    color:#fff;
+    margin-bottom:20px;
+}
+
+.cta p{
+    margin-bottom:30px;
+    font-size:18px;
+}
+
+/*====================================
+    FOOTER
+=====================================*/
+
+footer{
+    background:#111827;
+    color:#fff;
+    padding:60px 0 25px;
+    text-align:center;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:40px;
+    margin-bottom:30px;
+    text-align:left;
+}
+
+footer h3,
+footer h4{
+    margin-bottom:15px;
+}
+
+footer ul li{
+    margin-bottom:10px;
+}
+
+footer a{
+    color:#ddd;
+    transition:.3s;
+}
+
+footer a:hover{
+    color:#4ea3ff;
+}
+
+footer p{
+    color:#ccc;
+}
+
+/*====================================
+    UTILITIES
+=====================================*/
+
+.text-center{
+    text-align:center;
+}
+
+.mt-50{
+    margin-top:50px;
+}
+
+.mb-50{
+    margin-bottom:50px;
+}
+
+.shadow{
+    box-shadow:var(--shadow);
+}
+
+.rounded{
+    border-radius:15px;
+}

@@ -1,0 +1,346 @@
+/*=========================================
+    SGenova Technologies
+    Animations Stylesheet
+==========================================*/
+
+/* ===============================
+   Fade In
+================================ */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ===============================
+   Fade Up
+================================ */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===============================
+   Fade Down
+================================ */
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===============================
+   Fade Left
+================================ */
+
+@keyframes fadeLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ===============================
+   Fade Right
+================================ */
+
+@keyframes fadeRight {
+    from {
+        opacity: 0;
+        transform: translateX(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ===============================
+   Zoom In
+================================ */
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(.7);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ===============================
+   Floating Animation
+================================ */
+
+@keyframes floating {
+
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+
+}
+
+/* ===============================
+   Pulse
+================================ */
+
+@keyframes pulse {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+/* ===============================
+   Rotate
+================================ */
+
+@keyframes rotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+/* ===============================
+   Animation Classes
+================================ */
+
+.fade-in {
+    animation: fadeIn 1s ease forwards;
+}
+
+.fade-up {
+    animation: fadeUp .8s ease forwards;
+}
+
+.fade-down {
+    animation: fadeDown .8s ease forwards;
+}
+
+.fade-left {
+    animation: fadeLeft .8s ease forwards;
+}
+
+.fade-right {
+    animation: fadeRight .8s ease forwards;
+}
+
+.zoom-in {
+    animation: zoomIn .8s ease forwards;
+}
+
+.float {
+    animation: floating 4s ease-in-out infinite;
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+.rotate {
+    animation: rotate 8s linear infinite;
+}
+
+/* ===============================
+   Hero Animation
+================================ */
+
+.hero-text {
+    animation: fadeLeft 1s ease;
+}
+
+.hero-image {
+    animation: fadeRight 1s ease;
+}
+
+.hero-image img {
+    animation: floating 5s ease-in-out infinite;
+}
+
+/* ===============================
+   Cards Hover
+================================ */
+
+.card {
+    transition: .4s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    transition: .4s;
+}
+
+.card:hover img {
+    transform: scale(1.08);
+}
+
+/* ===============================
+   Buttons
+================================ */
+
+.btn,
+.btn-outline {
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+}
+
+.btn-outline:hover {
+    transform: translateY(-4px);
+}
+
+/* ===============================
+   Navigation Links
+================================ */
+
+nav ul li a {
+    position: relative;
+}
+
+nav ul li a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -5px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: #0056d6;
+
+    transition: .3s;
+
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+
+    width: 100%;
+
+}
+
+/* ===============================
+   Reveal Animation
+================================ */
+
+.reveal {
+
+    opacity: 0;
+
+    transform: translateY(50px);
+
+    transition: 1s;
+
+}
+
+.reveal.active {
+
+    opacity: 1;
+
+    transform: translateY(0);
+
+}
+
+/* ===============================
+   Section Animation
+================================ */
+
+section {
+    animation: fadeIn 1s ease;
+}
+
+/* ===============================
+   Portfolio Images
+================================ */
+
+.portfolio img {
+    transition: .5s;
+}
+
+.portfolio img:hover {
+    transform: scale(1.05);
+}
+
+/* ===============================
+   Technology Boxes
+================================ */
+
+.tech-grid div:hover {
+    transform: translateY(-8px);
+}
+
+/* ===============================
+   Contact Form
+================================ */
+
+.contact-form {
+    animation: zoomIn .8s;
+}
+
+.contact-info {
+    animation: fadeRight 1s;
+}
+
+/* ===============================
+   Footer
+================================ */
+
+footer {
+    animation: fadeUp 1s;
+}
