@@ -1,0 +1,53 @@
+# ==========================
+# FastAPI
+# ==========================
+fastapi
+uvicorn[standard]
+
+# ==========================
+# Database
+# ==========================
+sqlalchemy
+alembic
+psycopg2-binary
+
+# ==========================
+# Validation
+# ==========================
+pydantic
+email-validator
+
+# ==========================
+# Authentication
+# ==========================
+python-jose[cryptography]
+passlib[bcrypt]
+python-multipart
+
+# ==========================
+# Environment Variables
+# ==========================
+python-dotenv
+
+# ==========================
+# HTTP Requests
+# ==========================
+httpx
+
+# ==========================
+# Logging
+# ==========================
+loguru
+
+# ==========================
+# Testing
+# ==========================
+pytest
+pytest-asyncio
+
+# ==========================
+# Development
+# ==========================
+black
+isort
+flake8

@@ -1,48 +1,84 @@
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+# ================================
+# Database
+# ================================
+from app.database.base import Base
+from app.database.session import engine
+
+# ================================
+# Import ALL Models
+# ================================
+from app.models.user import User
+# from app.models.role import Role
+# from app.models.permission import Permission
+
+# ================================
 # Import Routers
+# ================================
 from app.api.v1.auth.router import router as auth_router
+
+
+# ===========================================
+# Startup & Shutdown
+# ===========================================
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+
+    print("🚀 Starting SGENOVIX Backend...")
+
+    # Create Database Tables
+    Base.metadata.create_all(bind=engine)
+
+    print("✅ Database Connected")
+    print("✅ Tables Created")
+
+    yield
+
+    print("🛑 Shutting Down Backend...")
+
+
+# ===========================================
+# FastAPI App
+# ===========================================
 
 app = FastAPI(
     title="SGENOVIX API",
     description="""
-## SGENOVIX Backend API
+# SGENOVIX Backend API
 
 Enterprise SaaS Platform
 
-Modules
+## Modules
+
 - Authentication
 - User Management
-- Employee Management
 - CRM
 - ERP
-- AI
+- HRMS
 - Finance
+- AI
 
-Version: 1.0.0
+Version **1.0.0**
 """,
     version="1.0.0",
-    contact={
-        "name": "SGENOVIX",
-        "email": "support@sgenovix.com",
-        "url": "https://sgenovix.com",
-    },
-    license_info={
-        "name": "Proprietary",
-    },
     docs_url="/docs",
     redoc_url="/redoc",
+    lifespan=lifespan
 )
 
-##############################################################
+# ===========================================
 # CORS
-##############################################################
+# ===========================================
 
 origins = [
     "http://localhost:3000",
-    "http://localhost:5173",
     "http://127.0.0.1:3000",
+    "http://localhost:5173",
     "http://127.0.0.1:5173",
 ]
 
@@ -54,47 +90,36 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-##############################################################
-# Startup Event
-##############################################################
-
-@app.on_event("startup")
-async def startup():
-    print("🚀 SGENOVIX Backend Started")
-
-##############################################################
-# Shutdown Event
-##############################################################
-
-@app.on_event("shutdown")
-async def shutdown():
-    print("🛑 SGENOVIX Backend Stopped")
-
-##############################################################
-# Root API
-##############################################################
+# ===========================================
+# Home
+# ===========================================
 
 @app.get("/", tags=["Home"])
 async def home():
+
     return {
         "success": True,
-        "message": "Welcome to SGENOVIX API",
-        "version": "1.0.0"
+        "application": "SGENOVIX",
+        "version": "1.0.0",
+        "message": "Backend Running Successfully"
     }
 
-##############################################################
+
+# ===========================================
 # Health Check
-##############################################################
+# ===========================================
 
 @app.get("/health", tags=["Health"])
 async def health():
+
     return {
-        "status": "healthy"
+        "status": "Healthy"
     }
 
-##############################################################
-# Register Routers
-##############################################################
+
+# ===========================================
+# Authentication Routes
+# ===========================================
 
 app.include_router(
     auth_router,
