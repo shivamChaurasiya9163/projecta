@@ -158,10 +158,18 @@ section h2{
     font-size:30px;
 
 }
+/* Portfolio Slider */
 
-.cards{
+.slider-track .card{
 
-    grid-template-columns:1fr;
+    flex:0 0 48%;
+
+}
+
+.slider-btn{
+
+    width:50px;
+    height:50px;
 
 }
 

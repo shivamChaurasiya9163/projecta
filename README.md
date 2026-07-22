@@ -5,7 +5,9 @@ python -m venv .venv
 
 pip install -r requirements.txt
 
-uvicorn app.main:app --reload
+//py -m pip install -r requirements.txt
+
+uvicorn main:app --reload
 
 # macOS/Linux
 python -m venv .venv
