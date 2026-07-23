@@ -51,3 +51,4 @@ pytest-asyncio
 black
 isort
 flake8
+openai

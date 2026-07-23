@@ -1,0 +1,99 @@
+{
+  "company": {
+    "name": "SGenovix Technologies",
+    "tagline": "Innovating the Future with AI & Software Solutions",
+    "description": "SGenovix Technologies is a technology company specializing in Artificial Intelligence, Web Development, Mobile Applications, Cloud Solutions, ERP, CRM, UI/UX Design, and Digital Marketing."
+  },
+
+  "services": [
+    {
+      "title": "AI Development",
+      "description": "Custom AI applications, chatbots, computer vision, machine learning, NLP, and automation solutions."
+    },
+    {
+      "title": "Website Development",
+      "description": "Responsive websites using HTML, CSS, JavaScript, React, PHP, Laravel, and modern technologies."
+    },
+    {
+      "title": "Mobile App Development",
+      "description": "Android, iOS, and Flutter applications for startups and enterprises."
+    },
+    {
+      "title": "ERP Solutions",
+      "description": "Enterprise Resource Planning systems for schools, hospitals, industries, and businesses."
+    },
+    {
+      "title": "CRM Solutions",
+      "description": "Customer Relationship Management software to manage clients and sales."
+    },
+    {
+      "title": "Cloud Solutions",
+      "description": "Cloud deployment, hosting, migration, AWS, Azure, and Google Cloud services."
+    },
+    {
+      "title": "Cyber Security",
+      "description": "Security assessments, penetration testing, secure infrastructure, and cyber consulting."
+    },
+    {
+      "title": "Digital Marketing",
+      "description": "SEO, social media marketing, branding, and online advertising."
+    }
+  ],
+
+  "portfolio": [
+    {
+      "name": "School ERP",
+      "description": "Complete ERP for schools with attendance, fees, results, and communication."
+    },
+    {
+      "name": "Hospital Management System",
+      "description": "Appointment booking, patient management, billing, and pharmacy integration."
+    },
+    {
+      "name": "AI Chatbot",
+      "description": "Custom AI chatbot for websites and businesses."
+    }
+  ],
+
+  "faqs": [
+    {
+      "question": "What services do you provide?",
+      "answer": "We provide AI Development, Website Development, Mobile Apps, ERP, CRM, Cloud Solutions, Cyber Security, and Digital Marketing."
+    },
+    {
+      "question": "Do you build AI chatbots?",
+      "answer": "Yes. We develop custom AI chatbots powered by modern Large Language Models."
+    },
+    {
+      "question": "Do you provide website hosting?",
+      "answer": "Yes. We provide hosting, deployment, and maintenance services."
+    },
+    {
+      "question": "Can I request a quotation?",
+      "answer": "Absolutely. Please share your project requirements and we'll prepare a customized quotation."
+    }
+  ],
+
+  "contact": {
+    "email": "info@sgenovix.com",
+    "phone": "+91-7980464129",
+    "website": "https://www.sgenovix.com",
+    "address": "Kolkata, West Bengal, India"
+  },
+
+  "working_hours": {
+    "Monday": "11:00 AM - 06:00 PM",
+    "Tuesday": "11:00 AM - 06:00 PM",
+    "Wednesday": "11:00 AM - 06:00 PM",
+    "Thursday": "11:00 AM - 06:00 PM",
+    "Friday": "11:00 AM - 06:00 PM",
+    "Sunday": "Closed"
+  },
+
+  "social_media": {
+    "facebook": "",
+    "instagram": "",
+    "linkedin": "",
+    "github": ""
+  }
+}
