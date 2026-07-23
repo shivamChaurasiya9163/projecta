@@ -24,6 +24,25 @@
 
 </head>
 
+<div id="chatbot-container"></div>
+
+<script>
+
+    fetch("chatbot.html")
+
+        .then(response => response.text())
+
+        .then(html => {
+
+            document.getElementById("chatbot-container").innerHTML = html;
+
+        });
+
+</script>
+
+<link rel="stylesheet" href="css/chatbot.css">
+
+<script src="js/chatbot.js"></script>
 <body>
 
     <!-- Header -->

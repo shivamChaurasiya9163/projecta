@@ -20,6 +20,7 @@ from app.models.user import User
 # Import Routers
 # ================================
 from app.api.v1.auth.router import router as auth_router
+from app.api.v1.chat.router import router as chat_router
 
 
 # ===========================================
@@ -71,6 +72,11 @@ Version **1.0.0**
     lifespan=lifespan
 )
 
+app.include_router(
+    chat_router,
+    prefix="/api/v1/chat",
+    tags=["Chatbot"]
+)
 # ===========================================
 # CORS
 # ===========================================
