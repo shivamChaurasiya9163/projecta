@@ -1,5 +1,7 @@
 from contextlib import asynccontextmanager
-
+from pathlib import Path
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -21,6 +23,7 @@ from app.models.user import User
 # ================================
 from app.api.v1.auth.router import router as auth_router
 from app.api.v1.chat.router import router as chat_router
+
 
 
 # ===========================================
@@ -71,7 +74,11 @@ Version **1.0.0**
     redoc_url="/redoc",
     lifespan=lifespan
 )
+BASE_DIR = Path(__file__).resolve().parent.parent
+FRONTEND_DIR = BASE_DIR / "Frontend"
 
+app.mount("/static", StaticFiles(directory=FRONTEND_DIR), name="static")
+ 
 app.include_router(
     chat_router,
     prefix="/api/v1/chat",
@@ -83,10 +90,18 @@ app.include_router(
 
 origins = [
     "http://localhost:3000",
-    "http://127.0.0.1:3000",
+    "http://127.0.0.1:8000",
+
     "http://localhost:5173",
     "http://127.0.0.1:5173",
+    
+    "http://localhost:5500",
+    "http://127.0.0.1:50586",
+
+    "http://localhost:5500",
+    "http://127.0.0.1:5500",
 ]
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -99,21 +114,20 @@ app.add_middleware(
 # ===========================================
 # Home
 # ===========================================
+# ===========================================
+# Home
+# ===========================================
 
-@app.get("/", tags=["Home"])
+@app.get("/", include_in_schema=False)
 async def home():
-
-    return {
-        "success": True,
-        "application": "SGENOVIX",
-        "version": "1.0.0",
-        "message": "Backend Running Successfully"
-    }
+    return FileResponse(FRONTEND_DIR / "index.html")
 
 
 # ===========================================
 # Health Check
 # ===========================================
+
+
 
 @app.get("/health", tags=["Health"])
 async def health():
