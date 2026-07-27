@@ -213,6 +213,8 @@
 
 .card:hover {
     transform: translateY(-10px);
+
+    box-shadow: 0 20px 45px rgba(16, 185, 129, .18);
 }
 
 .card img {
@@ -234,10 +236,14 @@
 
 .btn:hover {
     transform: translateY(-4px);
+
+    box-shadow: 0 12px 30px rgba(16, 185, 129, .35);
 }
 
 .btn-outline:hover {
     transform: translateY(-4px);
+
+    box-shadow: 0 12px 30px rgba(16, 185, 129, .25);
 }
 
 /* ===============================
@@ -263,6 +269,8 @@ nav ul li a::after {
     height: 2px;
 
     background: #0056d6;
+
+    box-shadow: 0 0 10px rgba(16, 185, 129, .45);
 
     transition: .3s;
 
