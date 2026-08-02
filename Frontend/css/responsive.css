@@ -27,13 +27,39 @@ section h2{
    Tablets (992px)
 ================================ */
 
-@media (max-width:992px){
+@media(max-width:992px) {
 
-.hero-content,
-.grid-2{
+    .process-flow {
 
-    grid-template-columns:1fr;
-    text-align:center;
+        width: 100%;
+
+        height: auto;
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+    }
+
+    .process-flow::before,
+    .process-flow::after {
+
+        display: none;
+
+    }
+
+    .step {
+
+        position: static;
+
+        width: 180px;
+        height: 180px;
+
+        margin: auto;
+
+    }
 
 }
 
@@ -74,7 +100,6 @@ section h2{
 
 }
 
-}
 
 /* ===============================
    Mobile Navigation (768px)
