@@ -260,3 +260,67 @@ window.addEventListener("load", () => {
     }, 3000);
 
 });
+
+/*==============================
+Technology Infinite Carousel
+===============================*/
+
+document.addEventListener("DOMContentLoaded",()=>{
+
+const track=document.querySelector(".tech-track");
+const prev=document.querySelector(".tech-prev");
+const next=document.querySelector(".tech-next");
+
+if(!track)return;
+
+track.innerHTML+=track.innerHTML;
+
+let x=0;
+
+function auto(){
+
+x++;
+
+track.style.transform=`translateX(-${x}px)`;
+
+if(x>=track.scrollWidth/2){
+
+x=0;
+
+track.style.transition="none";
+
+track.style.transform="translateX(0)";
+
+}
+
+requestAnimationFrame(auto);
+
+}
+
+requestAnimationFrame(auto);
+
+const step=200;
+
+next.onclick=()=>{
+
+x+=step;
+
+track.style.transition="transform .6s ease";
+
+track.style.transform=`translateX(-${x}px)`;
+
+};
+
+prev.onclick=()=>{
+
+x-=step;
+
+if(x<0)x=track.scrollWidth/2;
+
+track.style.transition="transform .6s ease";
+
+track.style.transform=`translateX(-${x}px)`;
+
+};
+
+});
